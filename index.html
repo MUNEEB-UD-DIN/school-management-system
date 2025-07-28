@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>School Management System</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+<div class="floating-particles"></div>
+
+
+  <header class="main-header">
+    <h1>🎓 School Management System</h1>
+  </header>
+
+  <div class="main-container">
+    <aside class="sidebar">
+      <ul>
+        <li><i class="fas fa-users"></i> Students</li>
+        <li><i class="fas fa-chalkboard-teacher"></i> Teachers</li>
+        <li><i class="fas fa-book"></i> Courses</li>
+        <li><i class="fas fa-cog"></i> Settings</li>
+      </ul>
+    </aside>
+
+    <section class="content">
+      <h2>📋 Manage Students</h2>
+
+      <div class="form-row">
+        <input type="text" id="name" placeholder="Student Name" />
+        <input type="number" id="age" placeholder="Age" />
+      </div>
+
+      <div class="form-row">
+        <input type="text" id="product" placeholder="Course" />
+        <input type="number" id="quantity" placeholder="Marks" />
+      </div>
+
+      <div class="button-row">
+        <button onclick="addItem()" class="btn"><i class="fas fa-plus"></i> Add</button>
+        <button onclick="clearForm()" class="btn"><i class="fas fa-eraser"></i> Clear</button>
+        <button onclick="clearTable()" class="btn"><i class="fas fa-trash"></i> Clear All</button>
+        <button onclick="openExcelFile()" class="btn"><i class="fas fa-folder-open"></i> Open Excel</button>
+        <button onclick="saveCurrentExcel()" class="btn"><i class="fas fa-save"></i> Save Excel</button>
+        <button onclick="createNewExcel()" class="btn btn-new">
+  <i class="fas fa-file-excel"></i> New Excel Sheet
+</button>
+
+      </div>
+
+      <input type="file" id="excelFileInput" accept=".xlsx,.xls" style="display: none;" />
+
+      <table id="inventoryTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Course</th>
+            <th>Marks</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="script.js"></script> 
+</body>
+</html>
